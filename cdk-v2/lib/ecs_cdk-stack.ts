@@ -13,9 +13,10 @@ export class EcsCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const githubUserName = new cdk.CfnParameter(this, "oriolmat", {
+    const githubUserName = new cdk.CfnParameter(this, "githubUserName", {
         type: "String",
-        description: "Github username for source code repository"
+        description: "Github username for source code repository",
+        default: "oriolmat"
     })
 
     const githubRepository = new cdk.CfnParameter(this, "githubRespository", {
